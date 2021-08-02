@@ -9,8 +9,9 @@ function App() {
   return (
     <div className="center bg-gray-200 h-screen">
       <BrowserRouter>
-        <ProtectedRoute exact path="/" component={Secret}></ProtectedRoute>
-        <Route path="/NotSignedIn" component={NotSignIn}></Route>
+      <Route path="/NotSignedIn" component={NotSignIn}></Route>
+      <ProtectedRoute exact path="/" component={Secret}></ProtectedRoute>
+        
       </BrowserRouter>
     </div>
   );
