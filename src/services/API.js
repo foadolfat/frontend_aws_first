@@ -12,7 +12,28 @@ class API{
             body: JSON.stringify({ 
                 username: u,
                 password: p,
-                classes: c
+                classes: ""
+            })
+            })
+
+            console.log(response.status);
+            return await response.json();
+          
+        }
+        return {message:"No input!"};
+    }
+
+    async signIn(u, p){
+        if(u!=='' && p!==''){
+            let response = await fetch('/api/signIn', {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ 
+                username: u,
+                password: p
             })
             })
 
