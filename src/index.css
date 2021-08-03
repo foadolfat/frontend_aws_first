@@ -25,8 +25,28 @@
         align-items: center;
         height:100vh;  
     }   
+
+    .field {
+        justify-items: center;
+
+    }
     .box {
         border-radius:0rem 0rem 0.5px 0.5px;
     }
 
+    .wid{
+        width: 21rem;
+    }
+
+    .halfwid{
+        width: 10.45rem
+    }
+
+    .signinbuttonmargin{
+        margin-top: 6rem/* 80px */;
+    }
+
+    .signupbuttonmargin{
+        margin-top: 3.25rem/* 80px */;
+    }
 }
