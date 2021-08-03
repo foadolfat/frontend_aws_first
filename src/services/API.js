@@ -1,19 +1,21 @@
+var url = "https://second-fullstack.herokuapp.com"
+//var url = "http://localhost:3001"
 class API{
     
 
-    async signUp(u, p, c){
-        if(u!=='' && p!=='' && c!==''){
-            let response = await fetch('https://second-fullstack.herokuapp.com/api/signUp', {
-            method: 'POST',
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ 
-                username: u,
-                password: p,
-                classes: ""
-            })
+
+    async signUp(u, p){
+        if(u!=='' && p!==''){
+            let response = await fetch(`${url}/api/signUp`, {
+                method: 'POST',
+                headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ 
+                    EMAIL: u,
+                    PASS: p
+                })
             })
 
             console.log(response.status);
@@ -25,15 +27,15 @@ class API{
 
     async signIn(u, p){
         if(u!=='' && p!==''){
-            let response = await fetch('https://second-fullstack.herokuapp.com/api/signIn', {
+            let response = await fetch(`${url}/api/signIn`, {
             method: 'POST',
             headers: {
               'Accept': 'application/json',
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({ 
-                username: u,
-                password: p
+                EMAIL: u,
+                PASS: p
             })
             })
 
@@ -45,13 +47,13 @@ class API{
     }
 
     async getHome(){
-        const list = await fetch(`https://second-fullstack.herokuapp.com/api/home`);
+        const list = await fetch(`${url}/api/home`);
         console.log(list);
         return await list.json();
     }
 
     async getSecret(){
-        const list = await fetch(`https://second-fullstack.herokuapp.com/api/secret`);
+        const list = await fetch(`${url}/api/secret`);
         console.log(list);
         return await list.json();
     }
