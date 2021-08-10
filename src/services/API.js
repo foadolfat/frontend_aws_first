@@ -1,5 +1,5 @@
-var url = "https://second-fullstack.herokuapp.com"
-// var url = "http://localhost:3001"
+// var url = "https://second-fullstack.herokuapp.com"
+var url = "http://localhost:3001"
 class API{
     
     async addPeer(ID){

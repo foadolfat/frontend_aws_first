@@ -78,7 +78,7 @@ function Classes(profile){
 
     return(
     
-        <div className={"m-4  " + (inProfile.profile ? "flex space-x-4" : "")}>
+        <div className={"" + (inProfile.profile ? "flex space-x-4" : "m-4")}>
             
             { classes && classes.length && classes.map((classes, index) => {
                 return <Class deletedClass={deletedClass} key={index} CLASS={classes.CLASS} SCHOOL={classes.SCHOOL} PROF={classes.PROF} profile={profile}/>

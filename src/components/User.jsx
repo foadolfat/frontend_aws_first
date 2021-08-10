@@ -48,8 +48,8 @@ function User(){
         // flex flex-col py-4 px-12 grid-cols-1 items-start h-96 w-screen border rounded-lg shadow-lg bg-white
         <div className=" py-4 px-12  h-96 w-full border rounded-lg shadow-lg bg-white">
             {!editing && 
-            <form onSubmit={handleEdit}>
-                <div className="py-4">
+            <form className=" flex justify-center space-x-20" onSubmit={handleEdit}>
+                <div className="py-4 ">
                     <span>Email: </span>{user && user.EMAIL }
                 </div>
                 <div className="py-4">
@@ -58,25 +58,26 @@ function User(){
                 <div className="py-4">
                     <span>Degree: </span>{user && user.DEGREE }
                 </div>
-                <button type="submit" className=" border-gray-300 bg-blue-500 hover:bg-blue-700 h-10 rounded-lg text-sm focus:outline-none inset-x-center signinbuttonmargin w-60 text-white font-bold" >
+                <button type="submit" className=" border-gray-300 bg-blue-500 hover:bg-blue-700 h-10 rounded-lg text-sm focus:outline-none  w-60 text-white font-bold" >
                     Edit
                 </button>
             </form>}
             {editing && 
-            <form onSubmit={handleSubmit}>
+            <form className="flex space-x-10 justify-center" onSubmit={handleSubmit}>
+                
                 <input  className="border-2 border-gray-300 bg-white px-5 pr-14 h-10 w-60 rounded-lg text-sm text-black focus:outline-none"
-                    type="text" name="F_NAME" value = {change.F_NAME} placeholder={user.F_NAME} onChange={e => setChange(ev => ({
+                    type="text" name="F_NAME" value = {change.F_NAME} placeholder={"First name"} onChange={e => setChange(ev => ({
                         ...ev,
                         F_NAME : e.target.value,
                         }))}/>
 
                 <input  className="border-2 border-gray-300 bg-white px-5 pr-14 h-10 w-60 rounded-lg text-sm text-black focus:outline-none"
-                     type="text" name="L_NAME" value = {change.M_NAME} placeholder={user.M_NAME} onChange={e => setChange(ev => ({
+                     type="text" name="L_NAME" value = {change.M_NAME} placeholder={"Middle name"} onChange={e => setChange(ev => ({
                         ...ev,
                         M_NAME : e.target.value,
                         }))}/>
                 <input  className="border-2 border-gray-300 bg-white px-5 pr-14 h-10 w-60 rounded-lg text-sm text-black focus:outline-none"
-                    type="text" name="DEGREE" value = {change.L_NAME} placeholder={user.L_NAME} onChange={e => setChange(ev => ({
+                    type="text" name="DEGREE" value = {change.L_NAME} placeholder={"Last name"} onChange={e => setChange(ev => ({
                         ...ev,
                         L_NAME : e.target.value,
                         }))}/>
@@ -86,11 +87,11 @@ function User(){
                         EMAIL : e.target.value,
                         }))}/> */}
                 <input  className="border-2 border-gray-300 bg-white px-5 pr-14 h-10 w-60 rounded-lg text-sm text-black focus:outline-none"
-                    type="text" name="M_NAME" value = {change.DEGREE} placeholder={user.DEGREE} onChange={e => setChange(ev => ({
+                    type="text" name="M_NAME" value = {change.DEGREE} placeholder={"Degree"} onChange={e => setChange(ev => ({
                         ...ev,
                         DEGREE : e.target.value,
                         }))}/>
-                <button type="submit" className=" border-gray-300 bg-blue-500 hover:bg-blue-700 h-10 rounded-lg text-sm focus:outline-none inset-x-center signinbuttonmargin w-60 text-white font-bold" >
+                <button type="submit" className=" border-gray-300 bg-blue-500 hover:bg-blue-700 h-10 rounded-lg text-sm focus:outline-none  w-60 text-white font-bold" >
                     Save Changes
                 </button>
             </form>}
