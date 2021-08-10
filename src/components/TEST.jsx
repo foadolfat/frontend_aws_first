@@ -32,7 +32,8 @@ function TEST(){
           <div className="">
             <div className="menu-container">
               <button onClick={onClick} className="menu-trigger">
-                <PROFILE_BLANK_SOLID/>
+                {/* <PROFILE_BLANK_SOLID/> */}
+                <LOGO/>
               </button>
               <nav
                 ref={dropdownRef}
@@ -41,8 +42,8 @@ function TEST(){
                 <ul>
                   <button onClick={handleProfile} className="profile-trigger space-x-16 text-black">
                       <span className="px-2">Profile</span>
-                      <PROFILE_BLANK_SOLID/>
-            
+                      {/* <PROFILE_BLANK_SOLID/> */}
+                      <LOGO/>
                   </button>
                   {/* <button onClick={onClick} className="button-trigger space-x-20 text-black">
                       <span>Setting</span>
