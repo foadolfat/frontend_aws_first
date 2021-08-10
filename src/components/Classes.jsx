@@ -45,9 +45,11 @@ function Classes(profile){
                     console.log(reason);
                 }).then(()=>
                     {
-                        var newClasses = [...classes];
-                        newClasses.push(change);
-                        setClasses(newClasses);
+                        if(classes && classes.length){
+                            var newClasses = [...classes];
+                            newClasses.push(change);
+                            setClasses(newClasses);
+                        }
                     }
                 )
                 
@@ -87,7 +89,7 @@ function Classes(profile){
             
                 (<form onSubmit={handleSubmit}>
                     
-                    <div className="flex flex-col py-4 px-12 grid-cols-1 items-start h-60 w-96 border rounded-lg shadow-lg bg-white">
+                    <div className="flex flex-col py-4 px-12 grid-cols-1 items-start h-60 w-96 border rounded-lg my-4 shadow-lg bg-white">
                         <div className="grid grid-cols-1 gap-1 field mx-auto">
                             <div className="text-xl">Add Class:</div>
                             <input  className="border-2 border-gray-300 bg-white px-5 pr-14 h-10 w-60 rounded-lg text-sm text-black focus:outline-none"
