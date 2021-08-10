@@ -38,7 +38,6 @@ function Classes(profile){
                 }
             }
 
-            
             if(!repeat)
             {
                 
@@ -77,7 +76,7 @@ function Classes(profile){
 
     return(
     
-        <div className="m-4 space-x-4 flex">
+        <div className={"m-4  " + (inProfile.profile ? "flex space-x-4" : "")}>
             
             { classes && classes.length && classes.map((classes, index) => {
                 return <Class deletedClass={deletedClass} key={index} CLASS={classes.CLASS} SCHOOL={classes.SCHOOL} PROF={classes.PROF} profile={profile}/>

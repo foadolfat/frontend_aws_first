@@ -22,7 +22,7 @@ function Class({deletedClass, CLASS, PROF, SCHOOL, profile}){
     }
     return(
 
-        <div className="flex flex-col py-4 px-12 grid-cols-1 items-start h-60 w-96 border rounded-lg shadow-lg bg-white">
+        <div className="flex flex-col py-4 px-12 my-4 grid-cols-1 items-start h-60 w-96 border rounded-lg shadow-lg bg-white">
             <div className="py-4">
                 <span>Class: </span>{CLASS && CLASS }
             </div>
