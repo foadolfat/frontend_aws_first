@@ -1,16 +1,24 @@
 import * as React from "react";
 import { Route, BrowserRouter } from "react-router-dom";
 import NotSignIn from './components/NotSignIn.jsx';
-import Secret from './components/Secret.jsx';
-import ProtectedRoute from "./components/ProtectedRoute";
+import Profile from './components/Profile.jsx';
+import ProtectedRoute from "./services/ProtectedRoute";
+import Home from './components/Home.jsx';
+
+
 
 function App() {
 
   return (
-    <div className="center bg-gray-200 h-screen">
+    <div className="">
+
       <BrowserRouter>
-      <Route path="/NotSignedIn" component={NotSignIn}></Route>
-      <ProtectedRoute exact path="/" component={Secret}></ProtectedRoute>
+        <ProtectedRoute exact path="/" component={Home}></ProtectedRoute>
+        <ProtectedRoute exact path="/Home" component={Home}></ProtectedRoute>
+        <ProtectedRoute exact path="/Profile" component={Profile}></ProtectedRoute>
+        
+        <Route path="/NotSignedIn" component={NotSignIn}></Route>
+      
         
       </BrowserRouter>
     </div>

@@ -24,10 +24,10 @@ function SignUp(){
             <form onSubmit={handleSubmit}>
 
                 <div className="bg-white rounded-lg border shadow-lg wid h-80 relative">
-                    <div className="grid grid-cols-1 gap-1 field mt-10">
+                    <div className="grid grid-cols-1 gap-1 field mt-12">
 
                         <input required className="border-2 border-gray-300 bg-white h-10 w-60 px-5 pr-14 rounded-lg text-sm text-black focus:outline-none"
-                            type="text" name="username" value = {newUser.u} placeholder="Username" onChange={e => setUser(ev => ({
+                            type="email" name="email" value = {newUser.u} placeholder="Email" onChange={e => setUser(ev => ({
                                 ...ev,
                                 u : e.target.value,
                             }))}/>

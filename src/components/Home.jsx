@@ -1,31 +1,25 @@
 import * as React from "react";
-import API from "../services/API.js";
+import TEST from "./TEST.jsx"
+import Suggestions from "./Suggestions.jsx"
+import Classes from "./Classes.jsx"
 
 function Home(){
-    const [content, setContent] = React.useState(null);
-    React.useEffect(()=>{
-        const api = new API();
-        api.getHome().then((home) => {
-            setContent(home.message);
-        }).catch((reason) => {
-            console.log(reason);
-        })
-    },[]);
-    // const getContent = ()=> {
-    //     const api = new API();
-    //     api.getHome().then((home) => {
-    //         setContent(home.message);
-    //     }).catch((reason) => {
-    //         console.log(reason);
-    //     })
-    // }
+
     return(
-        <div className="bg-blue-900 text-white h-screen flex-row w-1/4">
-            {/* {getContent()} */}
-            Home: 
-            {content && 
-                content
-            }
+        <div className="bg-gray-800">
+            <TEST/>
+            <div className="flex">
+                <div className="h-full w-1/4 bg-purple-400 p-4 m-4 shadow-lg rounded-lg">
+                    <h1 className="p-4 text-2xl font-bold">Your classes:</h1>
+                    <Classes profile={false}/>
+
+                </div>
+                <div className="h-screen w-3/4 bg-purple-300 p-4 m-4 shadow-lg rounded-lg">
+                    <h1 className="p-4 text-2xl font-bold">Suggested users to study with:</h1>
+                    <Suggestions/>
+
+                </div>
+            </div>
         </div>
     )
 }
