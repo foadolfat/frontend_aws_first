@@ -48,7 +48,7 @@ function User(){
         // flex flex-col py-4 px-12 grid-cols-1 items-start h-96 w-screen border rounded-lg shadow-lg bg-white
         <div className=" py-4 px-12  h-96 w-full border rounded-lg shadow-lg bg-white">
             {!editing && 
-            <form className=" flex justify-center space-x-20" onSubmit={handleEdit}>
+            <form className=" flex justify-center space-x-20 my-4" onSubmit={handleEdit}>
                 <div className="py-4 ">
                     <span>Email: </span>{user && user.EMAIL }
                 </div>
@@ -63,7 +63,7 @@ function User(){
                 </button>
             </form>}
             {editing && 
-            <form className="flex space-x-10 justify-center" onSubmit={handleSubmit}>
+            <form className="flex space-x-10 justify-center my-4" onSubmit={handleSubmit}>
                 
                 <input  className="border-2 border-gray-300 bg-white px-5 pr-14 h-10 w-60 rounded-lg text-sm text-black focus:outline-none"
                     type="text" name="F_NAME" value = {change.F_NAME} placeholder={"First name"} onChange={e => setChange(ev => ({
@@ -95,6 +95,7 @@ function User(){
                     Save Changes
                 </button>
             </form>}
+            <div className="flex justify-center"><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>Add Classes below, Click the logo on top left and view your reccomended study partners</div>
         </div>
 
 
